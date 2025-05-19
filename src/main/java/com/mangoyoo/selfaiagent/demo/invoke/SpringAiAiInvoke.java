@@ -2,6 +2,8 @@ package com.mangoyoo.selfaiagent.demo.invoke;
 
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
+import org.springframework.ai.chat.client.advisor.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
@@ -44,5 +46,12 @@ public class SpringAiAiInvoke implements CommandLineRunner {
                 .call()
                 .content();
         System.out.println(result);
+//        var chatClient2 = ChatClient.builder(chatModel)
+//                .defaultAdvisors(
+//                        new MessageChatMemoryAdvisor(chatMemory), // 对话记忆 advisor
+//                        new QuestionAnswerAdvisor(vectorStore)    // RAG 检索增强 advisor
+//                )
+//                .build();
+
     }
 }
