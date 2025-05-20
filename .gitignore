@@ -29,6 +29,6 @@ application-secret.yml
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-
+/tmp
 ### VS Code ###
 .vscode/
