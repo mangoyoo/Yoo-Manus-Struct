@@ -14,14 +14,14 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 // 取消注释即可在 SpringBoot 项目启动时执行
-@Component
+//@Component
 public class SpringAiAiInvoke implements CommandLineRunner {
 
-    @Resource
+//    @Resource
     private ChatModel dashscopeChatModel;
-    @Resource
+//    @Resource
     record ActorFilms(String actor, List<String> movies) {}
-    @Override
+//    @Override
     public void run(String... args) throws Exception {
 //        AssistantMessage output = dashscopeChatModel.call(new Prompt("你好，我是mangoyoo"))
 //                .getResult()
@@ -31,6 +31,7 @@ public class SpringAiAiInvoke implements CommandLineRunner {
         ChatClient chatClient = ChatClient.builder(dashscopeChatModel)
                 .defaultSystem("You are a friendly chat bot that answers question in the voice of a {voice}")
                 .build();
+
 
 //        String response = chatClient.prompt().user("你好").call().content();
 //        System.out.println(response);
